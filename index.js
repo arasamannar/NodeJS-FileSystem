@@ -2,6 +2,11 @@
 const fs = require('fs');
 const express = require('express'); //import the express package for connecting the data to server
 const app = express();
+
+const cors = require('cors');
+app.use(cors({
+    origin: '*' //mention the path from which we are receiving request to this API.
+}))
 app.listen('3000'); // connected through the port 3000
 const timestamp = Date.now(); //current timestamp 
 const dateString = new Date(timestamp).toLocaleTimeString(); //converting into a readable date format
